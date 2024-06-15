@@ -42,7 +42,7 @@ Route::post('tasks', function(Task $task, TaskRequest $request){
     $task->long_desc = $data['long_desc'];
     $task->save();
 
-    return redirect()->route('tasks.show',['id' => $task->id])->with('success', 'Created successfully!');
+    return redirect()->route('tasks.show',['task' => $task->id])->with('success', 'Created successfully!');
 
 })->name('tasks.store');
 
